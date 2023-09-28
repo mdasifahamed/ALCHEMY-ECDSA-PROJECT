@@ -1,0 +1,27 @@
+					ECDSA Node Project
+Project Goal:
+1. Incorporate Public Key Cryptography so transfers can only be completed with a valid signature
+
+2. The person sending the transaction should have to verify that they own the private key corresponding to the address that is sending funds
+
+My Modifictaion:
+
+1. Added A New Component On The Client Side To Create Public & Private Keypair And Assoiate Some Fund To That Pair.
+
+2. Added A New Path "/add" Path On The Server Side To Store Newly Created Public Key And The Fund Associate With That Key.
+
+3. Modifiend The Transfer Component to Send The Transaction Request To The Server as Digital Signature.
+
+4. Modified the Server Path "/send" That Able To signature and Verify The Signature To Release The Fund And Update The Both Sender And Receiver Account
+
+Things To Be Considered While Using:
+
+1. On The First Run The Server Don't Hold Any Account, So, To Check Functionalty On Must Create Cuople of Accounts Using Generate Key Pair Button
+
+3. One Should Sign The Trasaction With Private That Has A Public On The Server Otherwise It will show An Alert "Malicious Activity", This Functionaly Works On Transfer Side.
+
+2. Private Key Must be 32 Byts Hex String As It is Designed This Way. Other Wise it Will Not work
+
+4. Any Invalid Public Address Will Not Only The Public Keys That Has Been Generated Through Generate Will Work. 
+
+Note : Best Way To Check Usecases Save Write Down Keypairs Generated Through The Generate Kepairs The Use These Keypair To Check Fucntionalties. 
